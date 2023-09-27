@@ -1,56 +1,59 @@
-import React, {useState} from 'react'
-import TodoForm from './TodoForm'
+import React, { useState } from 'react';
+import TodoForm from './TodoForm';
 import Todo from './Todo';
 
+// Define the Header component outside of TodoList
+function Header() {
+    return (
+        <header className="header">
+            <h2>Youssef's To-Do</h2>
+        </header>
+    );
+}
 
 function TodoList() {
-    const[todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([]);
 
-    //Allows for if no one types a letter it won't show up
     const addTodo = todo => {
-        if(!todo.text || /^\s*$/.test(todo.text)) {
+        if (!todo.text || /^\s*$/.test(todo.text)) {
             return;   
         }
 
-        const newTodos = [todo, ...todos]
+        const newTodos = [todo, ...todos];
         setTodos(newTodos);
     };
 
     const updateTodo = (todoId, newValue) => {
         if (!newValue.text || /^\s*$/.test(newValue.text)) {
             return;
+        }
 
-        setTodos(prev => prev.map(item =>(item.id == todoId ? newValue: item )))
-        };
+        setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
     };
 
-
-
     const removeTodo = id => {
-        const removeArr = [...todos].filter(todo => todo.id !==id)
-
+        const removeArr = [...todos].filter(todo => todo.id !== id);
         setTodos(removeArr);
     };
 
     const completeTodo = id => {
-        let updatetedTodos = todos.map(todo => {
+        let updatedTodos = todos.map(todo => {
             if (todo.id === id) {
                 todo.isComplete = !todo.isComplete;
             }
             return todo;
         });
-        setTodos(updatetedTodos);
+        setTodos(updatedTodos);
     };
-
 
     return (
         <div>
+            <Header />  {/* Add the Header component */}
             <h1>Plans for today?</h1>
             <TodoForm onSubmit={addTodo} />
-            <Todo todos={todos} completeTodo={completeTodo} removeTodo=
-            {removeTodo} updateTodo = {updateTodo}/>   
+            <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />   
         </div>
-  );
+    );
 }
 
 export default TodoList;

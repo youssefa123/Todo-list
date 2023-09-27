@@ -150,3 +150,10 @@ h1 {
 .edit-icon {
   color: #fff;
 }
+
+.header {
+  background-color: #ff0077;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
