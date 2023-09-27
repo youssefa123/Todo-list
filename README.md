@@ -1,5 +1,7 @@
+
 # React Todo List
 
 This is a simple to-do list application built with React.js. The app allows users to add, edit, and delete tasks. Tasks can also be marked as complete by simply clicking on them.
 
-![Alt text] (/Users/youssefabdelhady/todo/example.jpg)
+
+![example](https://github.com/youssefa123/todo/assets/79177105/d21f490d-4957-4a1b-a3a3-dcbcf4c539ac)
