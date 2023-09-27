@@ -14,3 +14,9 @@ This is a simple to-do list application built with React.js. The app allows user
 3. Delete a todo item.
 4. Mark a todo item as complete.
 5. Uses unique icons for edit and delete operations.
+
+# Project Structure:
+1. App.js: The main application component that renders the TodoList.
+2. TodoForm.js: Contains the form used to add new todos or edit existing ones.
+3. TodoList.js: Manages a list of todos. Renders a header, the todo form, and a list of Todo items.
+4. Todo.js: Represents individual todo items. This component allows marking todos as complete, editing, and deleting them
